@@ -1,0 +1,27 @@
+# Source code withheld until publication
+src/
+
+# docs folder (containing theory and numerics documentation) withheld for some time
+docs/
+
+# Compiled Fortran files
+*.o
+*.mod
+*.out
+*.exe
+
+# Large simulation data
+*.dat
+*.bin
+
+# Build folders
+build/
+
+# VS Code settings
+.vscode/
+
+# Mac junk
+.DS_Store 
+
+#Executable
+FiberLinearFlow_prog 

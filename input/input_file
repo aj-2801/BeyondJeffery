@@ -1,0 +1,107 @@
+
+ input.dat
+
+! Parameters are read using a namelist statement.
+! Blank lines and commented lines are ignored.
+! Location of the parameters in the list is not important.
+
+&parameters 
+
+Nproc_k = 8
+Nproc_theta = 4
+Nproc_phi = 1 
+
+MaxStep = 20000    ! maximum number of time steps
+EndTime = 2000.d0     ! When to stop simulation
+deltat = 1e-2 
+
+! Is this a new case or a restart case... 
+restart = 0 ! 0 for new, 1 for restart 
+timestep_restart = 30 ! will only matter if restart is 1 
+
+! physical properties of fiber and fluid
+
+mu = 1.d0
+rho_fluid = 1.d0
+kappa = 50.d0 ! fiber aspect ratio
+l_fiber = 1.d0 ! fiber half-length
+rho_fiber = 2.d0 
+
+! Inertial or Stokes drag for the SBT inner problem...
+inner_SBT_drag = 1 ! 1 for inertial drag, 0 for stokes drag 
+
+! would you want to have fiber inertia or not...
+fiber_inertia = 0 ! 1 for fiber inertia, 0 for no fiber inertia  
+
+! no. of grid points in the Fourier space (keep all of them even for Simpsons integration rule)
+N_k = 50
+N_theta = 40
+N_phi = 50 
+
+! Fourier space grid structure (clustering near k = 0, uniform theta and phi)
+! delta_k (n) = delta_k_min + (1/cluster_param)*(n-1)^2
+delta_k_min = 0.002d0 
+cluster_param = 10000 
+
+! no. of grid points on the fiber axis 
+N_fiber = 20 
+
+! Initial Fiber orientation 
+px = 0.433d0
+py = 0.5d0
+pz = 0.75d0
+
+! Imposed Rotational Velocities of the fiber
+OmegaX=0.d0
+OmegaY=0.d0
+OmegaZ=0.d0
+
+! Imposed Translational Velocities of the fiber
+Ufiber=0.d0
+Vfiber=0.d0
+Wfiber=0.d0
+
+! To move at above prescribed velocity/ angular velocity make moveatprescribed=1
+! To allow fiber to rotate and move as per Newtons equations, make moveatprescribed=0
+! and set initial fiber motion using the above velocity components...
+moveatprescribed=0
+
+! Imposed Fluid Translation Velocities
+U_far_Imposed=0.d0
+V_far_Imposed=0.d0
+W_far_Imposed=0.d0
+
+! Imposed Fluid Velocity Gradients 
+Fardudx=0.d0 
+Fardudy=0.d0
+Fardudz=0.d0
+
+Fardvdx=0.d0
+Fardvdy=0.d0
+Fardvdz=0.d0
+
+Fardwdx=0.d0
+Fardwdy=0.d0
+Fardwdz=0.d0 
+
+gravity_Imposed=0.d0 ! Magnitude of gravity vector
+! Vector orientation
+gx=0.48295d0
+gy=-0.2588d0
+gz=0.8365d0 
+
+! External force on the fiber 
+F_ext_X = 0.d0
+F_ext_Y = 0.d0 
+F_ext_Z = 0.d0
+
+! External torque on the fiber 
+T_ext_X = 0.d0
+T_ext_Y = 0.d0 
+T_ext_Z = 0.d0 
+
+out_path      = 'Results'  ! name of the directory to store the results 
+
+/
+
+! end of the namelist
