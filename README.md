@@ -100,9 +100,9 @@ After publication, the repository is expected to be expanded to include:
 └── README.md
 ```
 
-## Source Code Release Status
+## Source Code and Documentation Release Status
 
-The source code required to compile and run the solver is not included in the current public version of this repository. The build and run instructions below apply to the planned source-code release following publication of the associated paper.
+The source code required to compile and run the solver is not included in the current public version of this repository. The build and run instructions below apply to the planned source-code release following publication of the associated paper. Documentation on theory and numerical method may be made available upon request in some time.  
 
 ## Build Requirements
 
